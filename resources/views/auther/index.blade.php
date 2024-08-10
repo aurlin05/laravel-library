@@ -4,10 +4,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <h2 class="admin-heading">All Authors</h2>
+                    <h2 class="admin-heading">Tous les auteurs</h2>
                 </div>
                 <div class="offset-md-7 col-md-2">
-                    <a class="add-new" href="{{ route('authors.create') }}">Add Author</a>
+                    <a class="add-new" href="{{ route('authors.create') }}">Add Auteur</a>
                 </div>
             </div>
             <div class="row">
@@ -16,9 +16,9 @@
                     <table class="content-table">
                         <thead>
                             <th>S.No</th>
-                            <th>Author Name</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
+                            <th>Nom de l'auteur</th>
+                            <th>Modifier</th>
+                            <th>Effacer</th>
                         </thead>
                         <tbody>
                             @forelse ($authors as $auther)
@@ -26,19 +26,19 @@
                                     <td>{{ $auther->id }}</td>
                                     <td>{{ $auther->name }}</td>
                                     <td class="edit">
-                                        <a href="{{ route('authors.edit', $auther) }}" class="btn btn-success">Edit</a>
+                                        <a href="{{ route('authors.edit', $auther) }}" class="btn btn-success">Modifier</a>
                                     </td>
                                     <td class="delete">
                                         <form action="{{ route('authors.destroy', $auther->id) }}" method="post"
                                             class="form-hidden">
-                                            <button class="btn btn-danger delete-author">Delete</button>
+                                            <button class="btn btn-danger delete-author">Effacer</button>
                                             @csrf
                                         </form>
                                     </td>
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="4">No Authors Found</td>
+                                    <td colspan="4">Aucun auteur trouvé</td>
                                 </tr>
                             @endforelse
                         </tbody>

@@ -17,11 +17,11 @@
                                 <td><b>{{ $book->student->name }}</b></td>
                             </tr>
                             <tr>
-                                <td>Book Name : </td>
+                                <td>Non du livre : </td>
                                 <td><b>{{ $book->book->name }}</b></td>
                             </tr>
                             <tr>
-                                <td>Phone : </td>
+                                <td>Numéro de téléphone : </td>
                                 <td><b>{{ $book->student->phone }}</b></td>
                             </tr>
                             <tr>
@@ -29,11 +29,11 @@
                                 <td><b>{{ $book->student->email }}</b></td>
                             </tr>
                             <tr>
-                                <td>Issue Date : </td>
+                                <td>Date de l'incident : </td>
                                 <td><b>{{ $book->issue_date->format('d M, Y') }}</b></td>
                             </tr>
                             <tr>
-                                <td>Return Date : </td>
+                                <td>Date du retour : </td>
                                 <td><b>{{ $book->return_date->format('d M, Y') }}</b></td>
                             </tr>
                             @if ($book->issue_status == 'Y')

@@ -16,13 +16,13 @@
                     <table class="content-table">
                         <thead>
                             <th>S.No</th>
-                            <th>Student Name</th>
-                            <th>Gender</th>
-                            <th>Phone</th>
+                            <th>Nom de l'étudiant</th>
+                            <th>Genre</th>
+                            <th>Numéro de téléphone</th>
                             <th>Email</th>
-                            <th>View</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
+                            <th>Vue</th>
+                            <th>Modifier</th>
+                            <th>Effacer</th>
                         </thead>
                         <tbody>
                             @forelse ($students as $student)
@@ -37,19 +37,19 @@
                                             class="btn btn-primary view-btn">View</button>
                                     </td>
                                     <td class="edit">
-                                        <a href="{{ route('student.edit', $student) }}>" class="btn btn-success">Edit</a>
+                                        <a href="{{ route('student.edit', $student) }}>" class="btn btn-success">Modifier</a>
                                     </td>
                                     <td class="delete">
                                         <form action="{{ route('student.destroy', $student->id) }}" method="post"
                                             class="form-hidden">
-                                            <button class="btn btn-danger delete-student">Delete</button>
+                                            <button class="btn btn-danger delete-student">Effacer</button>
                                             @csrf
                                         </form>
                                     </td>
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="8">No Students Found</td>
+                                    <td colspan="8">Aucun étudiant trouvé</td>
                                 </tr>
                             @endforelse
                         </tbody>
@@ -77,7 +77,7 @@
                 type: "get",
                 success: function(student) {
                     console.log(student);
-                    form ="<tr><td>Student Name :</td><td><b>"+student['name']+"</b></td></tr><tr><td>Address :</td><td><b>"+student['address']+"</b></td></tr><tr><td>Gender :</td><td><b>"+ student['gender']+ "</b></td></tr><tr><td>Class :</td><td><b>"+ student['class']+ "</b></td></tr><tr><td>Age :</td><td><b>"+ student['age']+ "</b></td></tr><tr><td>Phone :</td><td><b>"+ student['phone']+ "</b></td></tr><tr><td>Email :</td><td><b>"+ student['email']+ "</b></td></tr>";
+                    form ="<tr><td>Nom de l'étudiant :</td><td><b>"+student['name']+"</b></td></tr><tr><td>Address :</td><td><b>"+student['address']+"</b></td></tr><tr><td>Genre :</td><td><b>"+ student['gender']+ "</b></td></tr><tr><td>Class :</td><td><b>"+ student['class']+ "</b></td></tr><tr><td>Age :</td><td><b>"+ student['age']+ "</b></td></tr><tr><td>Numéro de téléphone :</td><td><b>"+ student['phone']+ "</b></td></tr><tr><td>Email :</td><td><b>"+ student['email']+ "</b></td></tr>";
           console.log(form);
 
                     $("#modal-form table").html(form);

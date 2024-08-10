@@ -4,7 +4,7 @@
         <div class="container">
             <div class="row">
                 <div class="offset-md-3 col-md-6">
-                    <h2 class="admin-heading text-center">Not Returned Books</h2>
+                    <h2 class="admin-heading text-center">Non Retournés Books</h2>
                 </div>
             </div>
             @if ($books)
@@ -13,12 +13,12 @@
                         <table class="content-table">
                             <thead>
                                 <th>S.No</th>
-                                <th>Student Name</th>
-                                <th>Book Name</th>
-                                <th>Phone</th>
+                                <th>Nom de l'étudiant</th>
+                                <th>Non du livre</th>
+                                <th>Numéro de téléphone</th>
                                 <th>Email</th>
-                                <th>Issue Date</th>
-                                <th>Return Date</th>
+                                <th>Date de l'incident</th>
+                                <th>Date du retour</th>
                                 <th>Over Days</th>
                             </thead>
                             <tbody>

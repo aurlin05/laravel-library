@@ -13,8 +13,8 @@
                         autocomplete="off">
                         @csrf
                         <div class="form-group">
-                            <label>Student Name</label>
-                            <input type="text" class="form-control" placeholder="Student Name" name="name"
+                            <label>Nom de l'étudiant</label>
+                            <input type="text" class="form-control" placeholder="Nom de l'étudiant" name="name"
                                 value="{{ $student->name }}" required>
                             @error('name')
                                 <div class="alert alert-danger" role="alert">
@@ -33,7 +33,7 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label>Gender</label>
+                            <label>Genre</label>
                             <select name="gender" class="form-control">
                                 @if ($student->gneder == 'male')
                                     <option value="male" selected>Male</option>
@@ -68,8 +68,8 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label>Phone</label>
-                            <input type="phone" class="form-control" placeholder="Phone" name="phone"
+                            <label>Numéro de téléphone</label>
+                            <input type="phone" class="form-control" placeholder="Numéro de téléphone" name="phone"
                                 value="{{ $student->phone }}" required>
                             @error('phone')
                                 <div class="alert alert-danger" role="alert">

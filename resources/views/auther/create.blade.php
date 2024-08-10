@@ -4,10 +4,10 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <h2 class="admin-heading">Add Author</h2>
+                <h2 class="admin-heading">Add Auteur</h2>
             </div>
             <div class="offset-md-7 col-md-2">
-              <a class="add-new" href="{{ route('authors') }}">All Authors</a>
+              <a class="add-new" href="{{ route('authors') }}">Tous les auteurs</a>
             </div>
         </div>
         <div class="row">
@@ -15,8 +15,8 @@
                 <form class="yourform" action="{{ route('authors.store') }}" method="post" autocomplete="off">
                     @csrf
                     <div class="form-group">
-                        <label>Author Name</label>
-                        <input type="text" class="form-control @error('name') isinvalid @enderror" placeholder="Author Name" name="name" value="{{ old('name') }}" required>
+                        <label>Nom de l'auteur</label>
+                        <input type="text" class="form-control @error('name') isinvalid @enderror" placeholder="Nom de l'auteur" name="name" value="{{ old('name') }}" required>
                         @error('name')
                             <div class="alert alert-danger" role="alert">
                                 {{ $message }}

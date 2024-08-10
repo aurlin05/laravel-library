@@ -1,32 +1,44 @@
 @extends('layouts.guest')
-@section('content')
 
-    <div id="wrapper-admin">
-        <div class="container">
-            <div class="row">
-                <div class="offset-md-4 col-md-4">
-                    <div class="logo border border-danger">
-                        <img src="{{ asset('images/library.png') }}" alt="">
-                    </div>
-                    <form class="yourform" action="{{ route('login') }}" method="post">
-                        @csrf
-                        <h3 class="heading">Admin Login</h3>
-                        <div class="form-group">
-                            <label>Username</label>
-                            <input type="text" name="username" class="form-control" value="{{ old('username') }}"
-                                required>
-                        </div>
-                        <div class="form-group">
-                            <label>Password</label>
-                            <input type="password" name="password" class="form-control" value="" required>
-                        </div>
-                        <input type="submit" name="login" class="btn btn-danger" value="login" />
-                    </form>
-                    @error('username')
-                        <div class='alert alert-danger'>{{ $message }}</div>
-                    @enderror
-                </div>
+@section('content')
+    <div class="min-h-screen flex items-center justify-center bg-gray-900 py-12 px-4 sm:px-6 lg:px-8">
+        <div class="max-w-md w-full space-y-8">
+            <div>
+                <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-100">
+                    Connexion
+                </h2>
             </div>
+            <form class="mt-8 space-y-6" action="{{ route('login') }}" method="POST">
+                @csrf
+                <div class="rounded-md shadow-sm -space-y-px">
+                    <div>
+                        <label for="username" class="sr-only">Identifiant</label>
+                        <input id="username" name="username" type="text" value="{{ old('username') }}" required 
+                            class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-700 bg-gray-800 placeholder-gray-400 text-gray-100 rounded-t-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" 
+                            placeholder="Identifiant">
+                    </div>
+                    <div>
+                        <label for="password" class="sr-only">Mot de passe</label>
+                        <input id="password" name="password" type="password" required 
+                            class="appearance-none rounded-none relative block w-full px-3 py-2 border border-gray-700 bg-gray-800 placeholder-gray-400 text-gray-100 rounded-b-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm" 
+                            placeholder="Mot de passe">
+                    </div>
+                </div>
+
+                @error('username')
+                    <div class="mt-2 text-sm text-red-600">
+                        {{ $message }}
+                    </div>
+                @enderror
+
+                <div>
+                    <button type="submit" 
+                        class="group relative w-full flex justify-center py-2 px-4 border border-transparent text-sm font-medium rounded-md text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                        Login
+                    </button>
+                </div>
+                <a href="{{ route('register') }}" class=" text-sky-400 text-sm text-center cursor-pointer underline">Vous n'avez pas de compte ? Créer</a>
+            </form>
         </div>
     </div>
 @endsection

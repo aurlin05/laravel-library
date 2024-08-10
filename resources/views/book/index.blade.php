@@ -5,7 +5,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <h2 class="admin-heading">All Books</h2>
+                    <h2 class="admin-heading">Tous les livres</h2>
                 </div>
                 <div class="offset-md-7 col-md-2">
                     <a class="add-new" href="{{ route('book.create') }}">Add Book</a>
@@ -17,13 +17,13 @@
                     <table class="content-table">
                         <thead>
                             <th>S.No</th>
-                            <th>Book Name</th>
-                            <th>Category</th>
-                            <th>Author</th>
-                            <th>Publisher</th>
+                            <th>Non du livre</th>
+                            <th>Categorie</th>
+                            <th>Auteur</th>
+                            <th>Publieur</th>
                             <th>Status</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
+                            <th>Modifier</th>
+                            <th>Effacer</th>
                         </thead>
                         <tbody>
                             @forelse ($books as $book)
@@ -41,19 +41,19 @@
                                         @endif
                                     </td>
                                     <td class="edit">
-                                        <a href="{{ route('book.edit', $book) }}" class="btn btn-success">Edit</a>
+                                        <a href="{{ route('book.edit', $book) }}" class="btn btn-success">Modifier</a>
                                     </td>
                                     <td class="delete">
                                         <form action="{{ route('book.destroy', $book) }}" method="post"
                                             class="form-hidden">
-                                            <button class="btn btn-danger delete-book">Delete</button>
+                                            <button class="btn btn-danger delete-book">Effacer</button>
                                             @csrf
                                         </form>
                                     </td>
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="8">No Books Found</td>
+                                    <td colspan="8">Aucun livre trouvé</td>
                                 </tr>
                             @endforelse
                         </tbody>

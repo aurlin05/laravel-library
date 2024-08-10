@@ -16,7 +16,7 @@
                         autocomplete="off">
                         @csrf
                         <div class="form-group">
-                            <label>Student Name</label>
+                            <label>Nom de l'étudiant</label>
                             <select class="form-control" name="student_id" required>
                                 <option value="">Select Name</option>
                                 @foreach ($students as $student)
@@ -30,7 +30,7 @@
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label>Book Name</label>
+                            <label>Non du livre</label>
                             <select class="form-control" name="book_id" required>
                                 <option value="">Select Name</option>
                                 @foreach ($books as $book)

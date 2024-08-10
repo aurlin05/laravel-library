@@ -6,6 +6,8 @@
     <title>{{ config('app.name', 'Library Management System') }}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}"> <!-- Bootstrap -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }} "> <!-- Custom stlylesheet -->
@@ -17,8 +19,8 @@
         <div class="container">
             <div class="row">
                 <div class="offset-md-4 col-md-4">
-                    <div class="logo">
-                        <a href="#"><img src="{{ asset('images/library.png') }}"></a>
+                    <div >
+                        <a href="#"><img class="w-[150px]" src="https://www.kindpng.com/picc/m/19-194546_icon-book-transparent-book-icon-png-png-download.png"></a>
                     </div>
                 </div>
                 <div class="offset-md-2 col-md-2">
@@ -46,14 +48,13 @@
                 <div class="col-md-12">
                     <ul class="menu">
                         <li><a href="{{ route('dashboard') }}">Dashboard</a></li>
-                        <li><a href="{{ route('authors') }}">Authors</a></li>
-                        <li><a href="{{ route('publishers') }}">Publishers</a></li>
+                        <li><a href="{{ route('authors') }}">Auteurs</a></li>
+                        <li><a href="{{ route('publishers') }}">Publieurs</a></li>
                         <li><a href="{{ route('categories') }}">Categories</a></li>
-                        <li><a href="{{ route('books') }}">Books</a></li>
+                        <li><a href="{{ route('books') }}">Livres</a></li>
                         <li><a href="{{ route('students') }}">Reg Students</a></li>
-                        <li><a href="{{ route('book_issued') }}">Book Issue</a></li>
-                        <li><a href="{{ route('reports') }}">Reports</a></li>
-                        <li><a href="{{ route('settings') }}">Settings</a></li>
+                        <li><a href="{{ route('book_issued') }}">Problèmes de livre</a></li>
+                        <li><a href="{{ route('reports') }}">Signalement</a></li>
                     </ul>
                 </div>
             </div>
@@ -67,7 +68,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <span>© Copyright {{ now()->format("Y") }} <a href="https://www.yahoobaba.net">YahooBaba 😎</a></span>
+                    <span>© Copyright {{ now()->format("Y") }} <a href="https://github.com/sosthene14">Sosthène Mounsamboté</a> & <a href="https://github.com/aurlin05">Aurlin Mikabissi</a></span>
                 </div>
             </div>
         </div>

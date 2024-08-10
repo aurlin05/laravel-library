@@ -4,10 +4,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-3">
-                    <h2 class="admin-heading">Add Category</h2>
+                    <h2 class="admin-heading">Add Categorie</h2>
                 </div>
                 <div class="offset-md-7 col-md-2">
-                    <a class="add-new" href="{{ route('categories') }}">All Categories</a>
+                    <a class="add-new" href="{{ route('categories') }}">Toutes les catégories</a>
                 </div>
             </div>
             <div class="row">
@@ -15,9 +15,9 @@
                     <form class="yourform" action="{{ route('category.store') }}" method="post" autocomplete="off">
                         @csrf
                         <div class="form-group">
-                            <label>Category Name</label>
+                            <label>Nom des catégories</label>
                             <input type="text" class="form-control @error('name') isinvalid @enderror"
-                                placeholder="Category Name" name="name" value="{{ old('name') }}" required>
+                                placeholder="Nom des catégories" name="name" value="{{ old('name') }}" required>
                             @error('name')
                                 <div class="alert alert-danger" role="alert">
                                     {{ $message }}

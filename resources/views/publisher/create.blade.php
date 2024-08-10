@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <h2 class="admin-heading">Add Publisher</h2>
+                <h2 class="admin-heading">Add Publieur</h2>
             </div>
             <div class="offset-md-7 col-md-2">
               <a class="add-new" href="{{ route('publishers') }}">All Publishers</a>
@@ -15,8 +15,8 @@
                 <form class="yourform" action="{{ route('publisher.store') }}" method="post" autocomplete="off">
                     @csrf
                     <div class="form-group">
-                        <label>Publisher Name</label>
-                        <input type="text" class="form-control @error('name') isinvalid @enderror" placeholder="Publisher Name" name="name" value="{{ old('name') }}" required>
+                        <label>Nom du publieur</label>
+                        <input type="text" class="form-control @error('name') isinvalid @enderror" placeholder="Nom du publieur" name="name" value="{{ old('name') }}" required>
                         @error('name')
                             <div class="alert alert-danger" role="alert">
                                 {{ $message }}

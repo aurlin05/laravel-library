@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\auth\LoginController;
+use App\Http\Controllers\auth\RegisterController;
 use App\Http\Controllers\AutherController;
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\BookIssueController;
@@ -27,7 +28,15 @@ use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
 Route::get('/', function () {
     return view('welcome');
 })->middleware('guest');
+Route::get('/register', function () {
+    return view('auth.register');
+})->middleware('guest');
+
 Route::post('/', [LoginController::class, 'login'])->name('login');
+
+Route::get('/register', [RegisterController::class, 'showRegistrationForm'])->name('register');
+Route::post('/register', [RegisterController::class, 'register']);
+
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 // Route::post('/Change-password', [LoginController::class, 'changePassword'])->name('change_password');
 
@@ -53,7 +62,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/publisher/delete/{id}', [PublisherController::class, 'destroy'])->name('publisher.destroy');
     Route::post('/publisher/create', [PublisherController::class, 'store'])->name('publisher.store');
 
-    // Category CRUD
+    // Categorie CRUD
     Route::get('/categories', [CategoryController::class, 'index'])->name('categories');
     Route::get('/category/create', [CategoryController::class, 'create'])->name('category.create');
     Route::get('/category/edit/{category}', [CategoryController::class, 'edit'])->name('category.edit');

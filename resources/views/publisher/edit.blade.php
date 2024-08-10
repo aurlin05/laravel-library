@@ -4,7 +4,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-3">
-                <h2 class="admin-heading">Update Publisher</h2>
+                <h2 class="admin-heading">Update Publieur</h2>
             </div>
         </div>
         <div class="row">
@@ -13,7 +13,7 @@
                     autocomplete="off">
                     @csrf
                     <div class="form-group">
-                        <label>Publisher Name</label>
+                        <label>Nom du publieur</label>
                         <input type="text" class="form-control @error('name') isinvalid @enderror" name="name"
                             value="{{ $publisher->name }}" required>
                         @error('name')

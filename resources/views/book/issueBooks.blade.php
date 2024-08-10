@@ -15,15 +15,15 @@
                     <table class="content-table">
                         <thead>
                             <th>S.No</th>
-                            <th>Student Name</th>
-                            <th>Book Name</th>
-                            <th>Phone</th>
+                            <th>Nom de l'étudiant</th>
+                            <th>Non du livre</th>
+                            <th>Numéro de téléphone</th>
                             <th>Email</th>
-                            <th>Issue Date</th>
-                            <th>Return Date</th>
+                            <th>Date de l'incident</th>
+                            <th>Date du retour</th>
                             <th>Status</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
+                            <th>Modifier</th>
+                            <th>Effacer</th>
                         </thead>
                         <tbody>
                             @forelse ($books as $book)
@@ -43,19 +43,19 @@
                                         @endif
                                     </td>
                                     <td class="edit">
-                                        <a href="{{ route('book_issue.edit', $book->id) }}" class="btn btn-success">Edit</a>
+                                        <a href="{{ route('book_issue.edit', $book->id) }}" class="btn btn-success">Modifier</a>
                                     </td>
                                     <td class="delete">
                                         <form action="{{ route('book_issue.destroy', $book) }}" method="post"
                                             class="form-hidden">
-                                            <button class="btn btn-danger">Delete</button>
+                                            <button class="btn btn-danger">Effacer</button>
                                             @csrf
                                         </form>
                                     </td>
                                 </tr>
                             @empty
                                 <tr>
-                                    <td colspan="10">No Books Issued</td>
+                                    <td colspan="10">Aucun livre endommagé </td>
                                 </tr>
                             @endforelse
                         </tbody>

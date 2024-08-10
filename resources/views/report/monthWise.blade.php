@@ -24,11 +24,11 @@
                         <table class="content-table">
                             <thead>
                                 <th>S.No</th>
-                                <th>Student Name</th>
-                                <th>Book Name</th>
-                                <th>Phone</th>
+                                <th>Nom de l'étudiant</th>
+                                <th>Non du livre</th>
+                                <th>Numéro de téléphone</th>
                                 <th>Email</th>
-                                <th>Issue Date</th>
+                                <th>Date de l'incident</th>
                             </thead>
                             <tbody>
                                 @forelse ($books as $book)
